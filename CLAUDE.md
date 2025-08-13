@@ -25,7 +25,7 @@ This is the **main Claude Code configuration repository** - a centralized, versi
 **Core Agents Maintained Here:**
 - **meta-agent** - Creates and modifies other agents (model: opus)
 - **gad** - Go architecture design specialist
-- **god** - Go implementation specialist  
+- **god** - Go implementation specialist
 - **go-learn** - Analyzes Go codebases to extract patterns
 - **go-project-agent** - Enhances Go agents with project patterns
 - **nixa** - NixOS configuration specialist
@@ -76,7 +76,7 @@ General Commands:
 
 Go Development Commands:
 - `/gad` - Go architecture design
-- `/god` - Go implementation  
+- `/god` - Go implementation
 - `/glearn` - Learn project patterns
 - `/gpa` - Apply project patterns
 - `/gcode` - Go code generation
@@ -188,3 +188,10 @@ When working in any project with Claude Code:
 - Minor versions for new agents/features
 - Patch versions for bug fixes
 - Tag releases for stable deployments
+
+## Critical Git Reminders
+- NEVER include "Generated with Claude Code" in commit messages.
+- NEVER include "Co-Authored-By Claude" in commit messages
+- NEVER refer to "phases" in commit messages
+- NEVER force-add gitignored files
+- NEVER commit sensitive data (API keys, passwords)

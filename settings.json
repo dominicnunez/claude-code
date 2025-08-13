@@ -19,12 +19,21 @@
       "Bash(mv:*)",
       "Bash(cp:*)",
       "Bash(mkdir:*)",
-      "Bash(do wc:*)",
       "Bash(curl:*)"
     ],
     "deny": []
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/aural/.claude/hooks/session_start.py --load-context --announce"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
