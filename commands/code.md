@@ -35,5 +35,5 @@ This is optimized for **single feature implementation** (e.g., "auth middleware"
 For **complete system implementation**, use `/designcode` (coming soon).
 
 ```bash
-python ~/.claude/single_feature_implementer.py "$ARGUMENTS"
+python ~/.claude/hooks/multi_agent/single_feature_implementer.py "$ARGUMENTS"
 ```

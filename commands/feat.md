@@ -35,5 +35,5 @@ This is optimized for **single features** (e.g., "authentication system", "cachi
 For **complete applications**, use `/design` instead.
 
 ```bash
-python ~/.claude/single_feature_design.py "$ARGUMENTS"
+python ~/.claude/hooks/multi_agent/single_feature_design.py "$ARGUMENTS"
 ```

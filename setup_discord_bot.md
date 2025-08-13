@@ -44,10 +44,10 @@ pip install discord.py
 ### 6. Run the Bridge
 ```bash
 # For slash commands support:
-python ~/.claude/discord_claude_slash.py
+python ~/.claude/hooks/discord/discord_claude_slash.py
 
 # Or for basic text commands:
-python ~/.claude/discord_claude_bridge.py
+python ~/.claude/hooks/discord/discord_claude_bridge.py
 ```
 
 ## Usage Examples
@@ -78,7 +78,7 @@ python ~/.claude/discord_claude_bridge.py
 ### For Agents to Request Permission:
 ```python
 import asyncio
-from discord_claude_bridge import request_discord_permission
+from hooks.discord.discord_claude_bridge import request_discord_permission
 
 response = asyncio.run(request_discord_permission(
     agent_name="god",
@@ -97,5 +97,5 @@ elif response == "no":
 ## Auto-start (Optional)
 Add to your shell profile or use systemd service:
 ```bash
-nohup python ~/.claude/discord_claude_bridge.py > ~/.claude/discord_bot.log 2>&1 &
+nohup python ~/.claude/hooks/discord/discord_claude_bridge.py > ~/.claude/discord_bot.log 2>&1 &
 ```

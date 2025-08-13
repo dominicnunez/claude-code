@@ -30,5 +30,5 @@ This will:
 Let me launch the iterative design system to create production-ready architecture documentation for your application.
 
 ```bash
-python ~/.claude/iterative_design_system.py "$ARGUMENTS"
+python ~/.claude/hooks/multi_agent/iterative_design_system.py "$ARGUMENTS"
 ```

@@ -33,5 +33,5 @@ $ARGUMENTS
 This analyzes the current directory's code and creates documentation that serves all audiences.
 
 ```bash
-python ~/.claude/readme_generator.py "$ARGUMENTS"
+python ~/.claude/hooks/multi_agent/readme_generator.py "$ARGUMENTS"
 ```

@@ -58,12 +58,12 @@ This is the **main Claude Code configuration repository** - a centralized, versi
 **Reusable workflow templates for complex tasks**
 
 Python orchestration scripts:
-- `multi_agent_design.py` - Parallel design exploration pattern
-- `multi_agent_base.py` - Base class for custom orchestrations
-- `single_feature_design.py` - Feature-focused design workflow
-- `single_feature_implementer.py` - Implementation workflow
-- `iterative_design_system.py` - Iterative refinement pattern
-- `readme_generator.py` - Documentation generation workflow
+- `hooks/multi_agent/multi_agent_design.py` - Parallel design exploration pattern
+- `hooks/multi_agent/multi_agent_base.py` - Base class for custom orchestrations
+- `hooks/multi_agent/single_feature_design.py` - Feature-focused design workflow
+- `hooks/multi_agent/single_feature_implementer.py` - Implementation workflow
+- `hooks/multi_agent/iterative_design_system.py` - Iterative refinement pattern
+- `hooks/multi_agent/readme_generator.py` - Documentation generation workflow
 
 ### Custom Commands
 **System-wide slash commands defined in `commands/`**
@@ -96,15 +96,16 @@ Workflow Commands:
 ├── agents/                 # Master agent definitions
 ├── commands/              # Slash command definitions
 ├── hooks/                 # Hook implementations
-│   └── utils/            # Shared utilities (TTS, LLM)
+│   ├── utils/            # Shared utilities (TTS, LLM)
+│   ├── multi_agent/      # Multi-agent orchestration scripts
+│   └── discord/          # Discord bot integration files
 ├── logs/                 # Hook execution logs
 ├── docs/                 # Documentation and guides
 │   └── ai_docs/         # AI-specific documentation
 ├── projects/             # Project-specific data
 ├── todos/                # Task tracking
 ├── settings.json         # Core configuration
-├── settings.local.json   # Local overrides (not in git)
-└── *.py                  # Orchestration scripts
+└── settings.local.json   # Local overrides (not in git)
 ```
 
 ## Deployment and Usage

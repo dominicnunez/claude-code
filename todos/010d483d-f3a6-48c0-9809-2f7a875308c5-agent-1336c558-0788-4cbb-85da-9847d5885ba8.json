@@ -1,0 +1,47 @@
+[
+  {
+    "content": "Resolve conflicting indicators interface definitions",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Clarify thread safety in decimal_math README",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Update import paths to use github.com/dominicnunez/bigmeanie",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Add thread-safe MockClock example in clock README",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Document error handling in indicators README",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Update goroutine package README to match implementation",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Fix naming inconsistencies (pinescripts vs misc)",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Qualify performance claims with environment details",
+    "status": "completed",
+    "id": "8"
+  },
+  {
+    "content": "Add external error wrapping examples in errors README",
+    "status": "completed",
+    "id": "9"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "content": "Resolve conflicting indicators interface definitions",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Clarify thread safety in decimal_math README",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Update import paths in README examples",
+    "status": "in_progress",
+    "id": "3"
+  },
+  {
+    "content": "Add thread-safe MockClock example in clock README",
+    "status": "pending",
+    "id": "4"
+  },
+  {
+    "content": "Document error handling in indicators README",
+    "status": "pending",
+    "id": "5"
+  },
+  {
+    "content": "Update goroutine package README to match implementation",
+    "status": "pending",
+    "id": "6"
+  },
+  {
+    "content": "Fix naming inconsistencies (pinescripts vs misc)",
+    "status": "pending",
+    "id": "7"
+  },
+  {
+    "content": "Qualify performance claims with benchmark references",
+    "status": "pending",
+    "id": "8"
+  },
+  {
+    "content": "Add external error wrapping examples in errors README",
+    "status": "pending",
+    "id": "9"
+  }
+]

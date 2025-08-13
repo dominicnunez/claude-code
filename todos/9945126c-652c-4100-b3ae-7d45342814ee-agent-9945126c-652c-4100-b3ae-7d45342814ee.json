@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "content": "Commit KDE notification configuration changes",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Rebuild NixOS with the new configuration",
+    "status": "completed",
+    "id": "2"
+  }
+]

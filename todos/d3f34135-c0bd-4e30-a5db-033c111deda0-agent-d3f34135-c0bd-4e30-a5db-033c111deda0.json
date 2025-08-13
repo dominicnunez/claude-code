@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Rename pkg/goroutine to pkg/safego for clarity and conciseness",
+    "status": "pending",
+    "id": "1"
+  },
+  {
+    "content": "Fix all package path references in documentation and remove 'v1' versioning convention",
+    "status": "pending",
+    "id": "2"
+  },
+  {
+    "content": "Update project structure section in project-conventions.md to reflect current /back structure",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Defer indicator-framework.md until framework is redesigned",
+    "status": "pending",
+    "id": "4"
+  },
+  {
+    "content": "Defer clock testing documentation until custom test assertion framework is created",
+    "status": "pending",
+    "id": "5"
+  }
+]
