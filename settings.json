@@ -1,0 +1,49 @@
+{
+  "customInstructions": {
+    "start": "First, read the CLAUDE.md file to understand project-specific context and guidelines. Then read TODO.md to see the current task list and priorities. After reading both files, begin working on the tasks or respond to the user's request with this context in mind."
+  },
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(ls:*)",
+      "Bash(for:*)",
+      "Bash(do)",
+      "Bash(then)",
+      "Bash(sed:*)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(find:*)",
+      "Bash(mv:*)",
+      "Bash(cp:*)",
+      "Bash(mkdir:*)",
+      "Bash(do wc:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "paplay /run/current-system/sw/share/sounds/freedesktop/stereo/bell.oga"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "paplay /run/current-system/sw/share/sounds/freedesktop/stereo/dialog-warning.oga"
+          }
+        ]
+      }
+    ]
+  }
+}

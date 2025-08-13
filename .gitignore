@@ -111,3 +111,6 @@ output
 outputs/
 
 extras/
+
+# Anthropic credentials
+.credentials.json

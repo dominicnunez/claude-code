@@ -1,46 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git config:*)",
-      "Bash(ls:*)",
-      "Bash(for:*)",
-      "Bash(do)",
-      "Bash(then)",
-      "Bash(sed:*)",
-      "Bash(fi)",
-      "Bash(done)",
-      "Bash(find:*)",
-      "Bash(mv:*)",
-      "Bash(cp:*)",
-      "Bash(mkdir:*)",
-      "Bash(do wc:*)",
-      "Bash(echo:*)"
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:nixos.org)",
+      "WebFetch(domain:nixos.wiki)"
     ],
     "deny": []
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "paplay /run/current-system/sw/share/sounds/freedesktop/stereo/bell.oga"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "paplay /run/current-system/sw/share/sounds/freedesktop/stereo/dialog-warning.oga"
-          }
-        ]
-      }
-    ]
   }
 }

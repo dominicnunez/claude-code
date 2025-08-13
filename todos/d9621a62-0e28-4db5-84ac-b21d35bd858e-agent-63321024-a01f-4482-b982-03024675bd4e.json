@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Implement Solana RPC client in internal/collector/blockchain/client.go",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Implement Pump.fun API client in internal/collector/pumpfun/client.go",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Implement Circuit Breaker pattern in internal/circuit/breaker.go",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Implement REST API server and handlers in internal/api/",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Implement WebSocket hub and client in internal/api/websocket/",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Complete repository implementations in internal/storage/postgres/",
+    "status": "pending",
+    "id": "6"
+  },
+  {
+    "content": "Create integration tests for critical components",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Create Dockerfile and docker-compose.yml",
+    "status": "completed",
+    "id": "8"
+  }
+]

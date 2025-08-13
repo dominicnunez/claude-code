@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Create a minimal shell.nix template in the root",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Create templates directory with project-specific shell.nix examples",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Create Node.js project shell.nix template",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Create Go project shell.nix template",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Create Python project shell.nix template",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Create full-stack project shell.nix template",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Update the root shell.nix to be minimal",
+    "status": "completed",
+    "id": "7"
+  }
+]

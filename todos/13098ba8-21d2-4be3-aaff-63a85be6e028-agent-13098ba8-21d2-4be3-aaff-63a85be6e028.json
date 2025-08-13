@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Analyze existing codebase patterns and conventions",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Design project-specific Go sub-agents for Big Meanie",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Create Big Meanie Go Architect agent",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Create Big Meanie Go Developer agent",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Create Trading Strategy Specialist agent",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Create Indicator Developer agent",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Create Backtest Engineer agent",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Create Test Writer agent",
+    "status": "completed",
+    "id": "8"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Search for libsoup references in the codebase",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Check system packages and nix configuration for libsoup",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Examine build logs and error messages",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Identify which module/package is trying to import libsoup",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Determine the correct fix for the import issue",
+    "status": "completed",
+    "id": "5"
+  }
+]

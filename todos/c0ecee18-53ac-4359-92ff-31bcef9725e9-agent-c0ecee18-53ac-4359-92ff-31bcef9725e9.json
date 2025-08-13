@@ -1,0 +1,177 @@
+[
+  {
+    "content": "Fix ATR test expected values and calculations",
+    "status": "completed",
+    "id": "30"
+  },
+  {
+    "content": "Fix VROC signal detection test failures",
+    "status": "in_progress",
+    "id": "31"
+  },
+  {
+    "content": "Fix VWAP signal and anchor reset test failures",
+    "status": "pending",
+    "id": "32"
+  },
+  {
+    "content": "Fix CMF divergence detection test failures",
+    "status": "pending",
+    "id": "33"
+  },
+  {
+    "content": "Fix MFI signal and divergence test failures",
+    "status": "pending",
+    "id": "34"
+  },
+  {
+    "content": "Fix Volume MA test calculation issues",
+    "status": "pending",
+    "id": "35"
+  },
+  {
+    "content": "Write tests for MLAS indicator",
+    "status": "pending",
+    "id": "7"
+  },
+  {
+    "content": "Write tests for FVGP indicator",
+    "status": "pending",
+    "id": "8"
+  },
+  {
+    "content": "Write tests for AVOP indicator",
+    "status": "pending",
+    "id": "9"
+  },
+  {
+    "content": "Write tests for MTO indicator",
+    "status": "pending",
+    "id": "10"
+  },
+  {
+    "content": "Write tests for ZLTS indicator",
+    "status": "pending",
+    "id": "11"
+  },
+  {
+    "content": "Write tests for Liquidity Zones tracker",
+    "status": "pending",
+    "id": "12"
+  },
+  {
+    "content": "Write tests for Volume Delta factory",
+    "status": "pending",
+    "id": "13"
+  },
+  {
+    "content": "Fix OBV constructor signature issues",
+    "status": "completed",
+    "id": "27"
+  },
+  {
+    "content": "Fix MFI test unused variables and method signatures",
+    "status": "completed",
+    "id": "28"
+  },
+  {
+    "content": "Fix remaining test compilation errors",
+    "status": "completed",
+    "id": "29"
+  },
+  {
+    "content": "Fix broken test files after sed replacement",
+    "status": "completed",
+    "id": "25"
+  },
+  {
+    "content": "Add documentation for AddBar float64 design choice",
+    "status": "completed",
+    "id": "26"
+  },
+  {
+    "content": "Write tests for VWAP indicator",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Write tests for MFI indicator",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Write tests for OBV indicator",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Write tests for CMF indicator",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Write tests for Volume MA indicator",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Write tests for VROC indicator",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Create canonical types in /pkg/types/market.go",
+    "status": "completed",
+    "id": "14"
+  },
+  {
+    "content": "Create order enums in /pkg/types/orders.go",
+    "status": "completed",
+    "id": "15"
+  },
+  {
+    "content": "Update models.Candle to embed types.Candle",
+    "status": "completed",
+    "id": "16"
+  },
+  {
+    "content": "Delete duplicate Candle definitions",
+    "status": "completed",
+    "id": "17"
+  },
+  {
+    "content": "Update 23 files with Candle import changes",
+    "status": "completed",
+    "id": "18"
+  },
+  {
+    "content": "Update 10 files with Order enum import changes",
+    "status": "completed",
+    "id": "19"
+  },
+  {
+    "content": "Remove conversion code in worker.go",
+    "status": "completed",
+    "id": "20"
+  },
+  {
+    "content": "Revert TimeSeries AddCandle anti-pattern",
+    "status": "completed",
+    "id": "21"
+  },
+  {
+    "content": "Rename AddCandle to Add in TimeSeries",
+    "status": "completed",
+    "id": "22"
+  },
+  {
+    "content": "Add AddBar helper method to TimeSeries",
+    "status": "completed",
+    "id": "23"
+  },
+  {
+    "content": "Test compilation and run existing tests",
+    "status": "completed",
+    "id": "24"
+  }
+]

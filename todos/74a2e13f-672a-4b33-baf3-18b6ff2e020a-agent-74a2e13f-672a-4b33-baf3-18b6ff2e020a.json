@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Remove backtestDataCollectorAdapter from backtest/timeseries_provider.go",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Update backtest/engine.go to remove adapter creation and cfgAdapter",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Remove fallback to COINBASE_KEY_ID and COINBASE_SECRET in data/data_config.go",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Remove SetGlobalDB() method from testhelper/database.go",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Update test files to remove SetGlobalDB calls",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Remove CalculateFromBacktestTrades from metrics/calculator.go",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Remove backward compatibility test",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Remove ToBacktestTrade conversion from models/trade.go",
+    "status": "completed",
+    "id": "8"
+  }
+]

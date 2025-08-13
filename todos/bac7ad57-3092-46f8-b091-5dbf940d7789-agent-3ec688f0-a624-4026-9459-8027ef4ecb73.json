@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Archive entire backend-docs directory to backend-docs-archive",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Identify and extract valuable content from backend-docs",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Create new clean backend-docs structure with patterns/, packages/, and guides/ directories",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Move general Go patterns to patterns/ directory",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Move package documentation for kept packages to packages/ directory",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Move general development guides to guides/ directory",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Remove all references to archived code from documentation",
+    "status": "completed",
+    "id": "7"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Fix package declaration in fees.go",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Remove verbose type names (CheckpointWorker, GracefulShutdown, CrashDetector)",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Remove Get prefixes and verbose method names in sliding_window.go",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Restructure fees.go with nested structs",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Simplify function names in context.go",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Rename generator types in paramsgen/generator.go",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Update decimal_cache.go constants",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Rename interfaces and helper functions",
+    "status": "completed",
+    "id": "8"
+  }
+]

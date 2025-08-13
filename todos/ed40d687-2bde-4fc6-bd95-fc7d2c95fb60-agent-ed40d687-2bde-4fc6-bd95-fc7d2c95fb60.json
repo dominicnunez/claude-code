@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Remove optional description prompt",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Add gh-init.sh to gitignore",
+    "status": "completed",
+    "id": "2"
+  }
+]

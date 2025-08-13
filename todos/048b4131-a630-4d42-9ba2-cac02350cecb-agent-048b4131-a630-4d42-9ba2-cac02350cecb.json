@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Remove configuration files reorganization section from PLAN.md",
+    "status": "completed",
+    "id": "remove-config"
+  },
+  {
+    "content": "Remove volume indicators research section from PLAN.md",
+    "status": "completed",
+    "id": "remove-volume-research"
+  },
+  {
+    "content": "Remove AlgoAlpha indicators section from PLAN.md",
+    "status": "completed",
+    "id": "remove-algoalpha"
+  },
+  {
+    "content": "Remove volume indicators deep dive from PLAN.md",
+    "status": "completed",
+    "id": "remove-volume-deep"
+  },
+  {
+    "content": "Remove types package migration section from PLAN.md",
+    "status": "completed",
+    "id": "remove-types"
+  },
+  {
+    "content": "Keep signal architecture, veto system, and future phases sections",
+    "status": "completed",
+    "id": "keep-sections"
+  },
+  {
+    "content": "Update TODO.md file to reflect changes",
+    "status": "completed",
+    "id": "update-todo-md"
+  }
+]

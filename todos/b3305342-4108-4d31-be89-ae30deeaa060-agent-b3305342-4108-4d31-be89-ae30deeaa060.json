@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Check if nixa agent exists",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Add slash_command: nixa to the frontmatter",
+    "status": "completed",
+    "id": "2"
+  }
+]

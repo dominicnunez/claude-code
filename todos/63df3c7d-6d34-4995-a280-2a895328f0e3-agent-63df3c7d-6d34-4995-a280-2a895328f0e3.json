@@ -1,0 +1,112 @@
+[
+  {
+    "content": "Clean up /pkg/metrics package",
+    "status": "completed",
+    "id": "cleanup_metrics"
+  },
+  {
+    "content": "Update PLAN.md to separate market structure from risk settings",
+    "status": "completed",
+    "id": "update_plan_separation"
+  },
+  {
+    "content": "Add metrics worker heartbeat to PLAN.md",
+    "status": "completed",
+    "id": "add_metrics_heartbeat"
+  },
+  {
+    "content": "Update PLAN.md with refined WorkerState and recovery design",
+    "status": "completed",
+    "id": "update_workerstate_design"
+  },
+  {
+    "content": "Add graceful shutdown feature to PLAN.md",
+    "status": "completed",
+    "id": "add_graceful_shutdown"
+  },
+  {
+    "content": "Add Go idiomatic patterns section to PLAN.md",
+    "status": "completed",
+    "id": "add_go_patterns"
+  },
+  {
+    "content": "Fix non-idiomatic code in PLAN.md",
+    "status": "completed",
+    "id": "fix_non_idiomatic"
+  },
+  {
+    "content": "Update PLAN.md to use custom logger and error framework",
+    "status": "completed",
+    "id": "add_logger_errors"
+  },
+  {
+    "content": "Detail metrics pipeline queue implementation",
+    "status": "pending",
+    "id": "detail_metrics_queue"
+  },
+  {
+    "content": "Detail parameter sweep generation algorithm",
+    "status": "pending",
+    "id": "detail_param_sweep"
+  },
+  {
+    "content": "Detail database schema for new models",
+    "status": "pending",
+    "id": "detail_db_schema"
+  },
+  {
+    "content": "Detail safego panic recovery implementation",
+    "status": "pending",
+    "id": "detail_safego"
+  },
+  {
+    "content": "Detail indicator YAML loading and validation",
+    "status": "pending",
+    "id": "detail_yaml_loading"
+  },
+  {
+    "content": "Detail Boss job distribution algorithm",
+    "status": "pending",
+    "id": "detail_boss_distribution"
+  },
+  {
+    "content": "Create StrategyProfile model with JSONB, timeframe, market fields, and hash ID",
+    "status": "pending",
+    "id": "create_strategy_profile"
+  },
+  {
+    "content": "Create WorkerState model for crash recovery tracking",
+    "status": "pending",
+    "id": "create_worker_state"
+  },
+  {
+    "content": "Create reusable heartbeat package in /pkg/heartbeat/",
+    "status": "pending",
+    "id": "create_heartbeat_package"
+  },
+  {
+    "content": "Create /internal/parameters/ package with timeframe and market support",
+    "status": "pending",
+    "id": "create_param_package"
+  },
+  {
+    "content": "Create metrics pipeline with queue for live/backtest",
+    "status": "pending",
+    "id": "create_metrics_pipeline"
+  },
+  {
+    "content": "Update indicator constructors to handle map[string]interface{} parameters",
+    "status": "pending",
+    "id": "update_indicator_constructors"
+  },
+  {
+    "content": "Update Boss to use parameter generator for market-aware job distribution",
+    "status": "pending",
+    "id": "update_boss_param_gen"
+  },
+  {
+    "content": "Create indicator YAML configs with defaults and sweep ranges",
+    "status": "pending",
+    "id": "create_indicator_yamls"
+  }
+]
