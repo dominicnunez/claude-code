@@ -48,9 +48,12 @@ Think carefully about the user's prompt, the documentation, and the tools availa
 **6. Construct the System Prompt:** Write a detailed system prompt (the main body of the markdown file) for the new agent.
 **7. Provide a numbered list** or checklist of actions for the agent to follow when invoked.
 **8. Incorporate best practices** relevant to its specific domain.
-**9. Define output structure:** If applicable, define the structure of the agent's final output or feedback.
-**10. Assemble and Output:** 
-   - For new agents: Write the complete file to `.claude/agents/<generated-agent-name>.md`
+**9. Create Slash Command:** Automatically create a corresponding slash command file at `commands/<agent-name>.md` with a one-line instruction to invoke the agent (e.g., "Use the <agent-name> agent to <primary-purpose>").
+**10. Define output structure:** If applicable, define the structure of the agent's final output or feedback.
+**11. Assemble and Output:** 
+   - For new agents: 
+     - Write the complete agent file to `.claude/agents/<generated-agent-name>.md`
+     - Write the slash command file to `commands/<generated-agent-name>.md`
    - For edited agents: Apply changes using MultiEdit to preserve existing content while updating as requested
    - Always use `model: opus` for maximum capability
 
@@ -63,7 +66,13 @@ Think carefully about the user's prompt, the documentation, and the tools availa
 - Provide a brief summary of changes made
 
 ### When CREATING:
-Generate a single Markdown file with the complete agent definition. The structure must be exactly as follows:
+1. Generate the agent definition file at `.claude/agents/<agent-name>.md`
+2. Generate the slash command file at `commands/<agent-name>.md` with content like:
+   ```
+   Use the <agent-name> agent to <primary-purpose>
+   ```
+
+The agent definition structure must be exactly as follows:
 
 ```md
 ---
