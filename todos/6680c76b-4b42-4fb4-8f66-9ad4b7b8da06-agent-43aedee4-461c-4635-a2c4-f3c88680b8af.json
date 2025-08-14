@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Diagnose multi-agent command failures",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Check wrapper script configurations",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Verify Python environment and dependencies",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Test authentication methods",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Fix authentication issues",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Update multi_agent_design.py shebang",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Create comprehensive fix report",
+    "status": "completed",
+    "id": "7"
+  }
+]

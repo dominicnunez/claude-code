@@ -3,8 +3,10 @@
     "allow": [
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:nixos.org)",
-      "WebFetch(domain:nixos.wiki)"
+      "WebFetch(domain:nixos.wiki)",
+      "Bash(python:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }

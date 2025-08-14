@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Update multi_agent_base.py to use official Anthropic API",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Update single_feature_design.py to use official Anthropic API",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Update single_feature_implementer.py to use official Anthropic API",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Update iterative_design_system.py to use official Anthropic API",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Update readme_generator.py to use official Anthropic API",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Update multi_agent_design.py to use official Anthropic API",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Create requirements.txt with anthropic package",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Test the updated implementation",
+    "status": "completed",
+    "id": "8"
+  }
+]

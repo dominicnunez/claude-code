@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Analyze current wrapper implementations and agent integration points",
+    "status": "in_progress",
+    "id": "analyze-current"
+  },
+  {
+    "content": "Design language-aware agent integration for orchestration",
+    "status": "pending",
+    "id": "design-integration"
+  },
+  {
+    "content": "Create Claude Code commands that use orchestration with agents",
+    "status": "pending",
+    "id": "create-commands"
+  },
+  {
+    "content": "Implement language detection and agent selection logic",
+    "status": "pending",
+    "id": "implement-language-detection"
+  }
+]

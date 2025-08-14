@@ -1,0 +1,8 @@
+#!/bin/bash
+# Git pre-commit hook to archive completed tasks
+
+# Run the task archiver
+python ~/.claude/hooks/archive_completed_tasks.py
+
+# Continue with the commit
+exit 0

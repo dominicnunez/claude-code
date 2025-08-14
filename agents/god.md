@@ -1,7 +1,7 @@
 ---
 name: god
 description: Use PROACTIVELY for implementing, coding, writing, building, fixing, creating, developing, or programming Go code. Specialist for Go implementation tasks including functions, methods, handlers, services, APIs, endpoints, middleware, repositories, models, structs, interfaces, generics, concurrent code, goroutines, channels, tests, and benchmarks.
-tools: Read, MultiEdit, Write, Bash, Grep, Glob, TodoWrite
+tools: Read, MultiEdit, Write, Bash, Grep, Glob, TodoWrite, WebSearch
 model: opus
 color: cyan
 ---

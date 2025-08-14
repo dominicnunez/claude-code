@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Investigate /feat command setup and ModuleNotFoundError",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Create claude_sdk.py module to fix missing dependency",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Fix syntax errors in single_feature_implementer.py",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Test all multi-agent scripts can import successfully",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Create test suite for claude_sdk module",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Document the solution and create README",
+    "status": "completed",
+    "id": "6"
+  }
+]

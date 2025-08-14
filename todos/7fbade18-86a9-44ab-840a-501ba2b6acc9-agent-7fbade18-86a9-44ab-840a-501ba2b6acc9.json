@@ -1,0 +1,47 @@
+[
+  {
+    "content": "Research and evaluate MCP servers for Big Meanie development workflow",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Identify useful development MCP servers (Git, Docker, PostgreSQL, filesystem)",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Set up PostgreSQL MCP for database development",
+    "status": "pending",
+    "id": "3"
+  },
+  {
+    "content": "Set up Docker MCP for containerized testing",
+    "status": "pending",
+    "id": "4"
+  },
+  {
+    "content": "Switch to TimescaleDB instead of regular PostgreSQL",
+    "status": "pending",
+    "id": "5"
+  },
+  {
+    "content": "Set up Redis for live trading state management",
+    "status": "pending",
+    "id": "6"
+  },
+  {
+    "content": "Design concurrent backtesting pipeline architecture",
+    "status": "pending",
+    "id": "7"
+  },
+  {
+    "content": "Implement worker pool pattern for parallel backtesting",
+    "status": "pending",
+    "id": "8"
+  },
+  {
+    "content": "Write Big Meanie backend architecture plan",
+    "status": "in_progress",
+    "id": "9"
+  }
+]

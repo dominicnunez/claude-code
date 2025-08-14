@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Review current VS Code Home Manager configuration",
+    "status": "in_progress",
+    "id": "1"
+  },
+  {
+    "content": "Modify config to prevent settings.json symlink generation",
+    "status": "pending",
+    "id": "2"
+  },
+  {
+    "content": "Test configuration changes",
+    "status": "pending",
+    "id": "3"
+  }
+]
