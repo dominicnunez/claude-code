@@ -114,3 +114,18 @@ extras/
 
 # Anthropic credentials
 .credentials.json
+
+# Statsig cache and sessions
+statsig/
+
+# Shell snapshots
+shell-snapshots/
+
+# IDE files
+ide/
+
+# Todo files
+todos/
+
+# Project files
+projects/
