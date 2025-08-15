@@ -1,7 +1,4 @@
 {
-  "customInstructions": {
-    "start": "First, read the CLAUDE.md file to understand project-specific context and guidelines. Then read TODO.md to see the current task list and priorities. After reading both files, begin working on the tasks or respond to the user's request with this context in mind."
-  },
   "permissions": {
     "allow": [
       "Bash(grep:*)",
@@ -54,5 +51,6 @@
         ]
       }
     ]
-  }
+  },
+  "model": "opus"
 }
