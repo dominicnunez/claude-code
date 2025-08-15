@@ -1,0 +1,89 @@
+{
+  "orchestration": {
+    "design_parallel_agent_count": 5,
+    "feat_parallel_agent_count": 5,
+    "dev_parallel_agent_count": 5,
+    "execution_timeout_seconds": 300,
+    "minimum_agents_for_orchestration": 3,
+    "max_concurrent_agents": 10,
+    "agent_startup_timeout": 30,
+    "result_collection_timeout": 60
+  },
+  "language_detection": {
+    "confidence_threshold": 0.6,
+    "file_scan_depth": 3,
+    "max_files_to_scan": 100,
+    "enable_pattern_detection": true,
+    "enable_config_file_detection": true,
+    "enable_content_analysis": true
+  },
+  "user_approval": {
+    "user_design_approval": true,
+    "user_feat_approval": false,
+    "user_dev_approval": false,
+    "approval_timeout_seconds": 300,
+    "show_evaluation_details": true,
+    "max_alternatives_to_show": 5
+  },
+  "fallback_strategies": {
+    "enable_main_claude_fallback": true,
+    "prompt_user_on_low_confidence": true,
+    "retry_on_agent_failure": true,
+    "max_retry_attempts": 2,
+    "fallback_quality_threshold": 0.3
+  },
+  "evaluation": {
+    "enable_competitive_evaluation": true,
+    "require_minimum_score": false,
+    "minimum_acceptable_score": 0.4,
+    "prefer_structural_integrity": true,
+    "weight_recent_performance": true,
+    "performance_history_window": 100
+  },
+  "persistence": {
+    "enable_archiving": true,
+    "archive_failed_attempts": false,
+    "compress_archives": false,
+    "max_archive_age_days": 30,
+    "cleanup_temp_files": true,
+    "backup_before_overwrite": true
+  },
+  "performance": {
+    "enable_caching": true,
+    "cache_duration_minutes": 60,
+    "enable_parallel_evaluation": true,
+    "max_memory_usage_mb": 1024,
+    "enable_progress_reporting": true,
+    "log_performance_metrics": true
+  },
+  "security": {
+    "validate_agent_outputs": true,
+    "sanitize_file_paths": true,
+    "restrict_file_extensions": true,
+    "allowed_file_extensions": [
+      ".md", ".txt", ".json", ".yaml", ".yml", ".toml",
+      ".go", ".py", ".rs", ".js", ".ts", ".java", ".cs", ".cpp", ".c", ".h",
+      ".rb", ".php", ".swift", ".kt", ".scala", ".clj", ".hs", ".elm",
+      ".sh", ".bat", ".ps1", ".dockerfile", ".gitignore", ".gitattributes",
+      ".lock", ".sum", ".mod"
+    ],
+    "max_file_size_mb": 10,
+    "scan_for_sensitive_content": true
+  },
+  "logging": {
+    "log_level": "INFO",
+    "log_to_file": true,
+    "log_file_path": "logs/orchestration.log",
+    "max_log_file_size_mb": 10,
+    "log_rotation_count": 5,
+    "include_agent_outputs": false,
+    "log_performance_metrics": true
+  },
+  "experimental": {
+    "enable_adaptive_timeouts": false,
+    "enable_agent_load_balancing": false,
+    "enable_predictive_caching": false,
+    "enable_quality_learning": false,
+    "enable_cross_validation": false
+  }
+}

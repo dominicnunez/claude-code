@@ -1,0 +1,466 @@
+{
+  "languages": {
+    "go": {
+      "architect": "gad",
+      "developer": "god",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".go"],
+      "config_files": ["go.mod", "go.sum", "Makefile"],
+      "patterns": [
+        "package main",
+        "func main()",
+        "import (",
+        "type struct",
+        "interface",
+        "goroutine",
+        "channel"
+      ],
+      "project_structure": [
+        "cmd/",
+        "internal/",
+        "pkg/",
+        "test/",
+        "docs/",
+        "scripts/"
+      ],
+      "build_files": ["go.mod", "go.sum", "Makefile", "Dockerfile"],
+      "test_patterns": ["*_test.go", "testdata/"],
+      "capabilities": {
+        "microservices": 5,
+        "concurrency": 5,
+        "performance": 5,
+        "web_apis": 4,
+        "cli_tools": 5,
+        "data_processing": 4
+      }
+    },
+    "python": {
+      "architect": "pyad",
+      "developer": "pydv",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".py", ".pyw"],
+      "config_files": [
+        "pyproject.toml",
+        "setup.py",
+        "requirements.txt",
+        "Pipfile",
+        "poetry.lock",
+        "environment.yml"
+      ],
+      "patterns": [
+        "def ",
+        "import ",
+        "from ",
+        "class ",
+        "if __name__ == '__main__':",
+        "async def",
+        "await "
+      ],
+      "project_structure": [
+        "src/",
+        "tests/",
+        "docs/",
+        "scripts/",
+        "data/",
+        "notebooks/"
+      ],
+      "build_files": [
+        "pyproject.toml",
+        "setup.py",
+        "requirements.txt",
+        "Dockerfile",
+        "tox.ini"
+      ],
+      "test_patterns": ["test_*.py", "*_test.py", "tests/"],
+      "capabilities": {
+        "web_development": 5,
+        "data_science": 5,
+        "machine_learning": 5,
+        "automation": 5,
+        "apis": 5,
+        "scripting": 5
+      }
+    },
+    "rust": {
+      "architect": "rustarch",
+      "developer": "rustdev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".rs"],
+      "config_files": ["Cargo.toml", "Cargo.lock"],
+      "patterns": [
+        "fn main()",
+        "use ",
+        "pub fn",
+        "struct ",
+        "enum ",
+        "impl ",
+        "match ",
+        "Result<",
+        "Option<"
+      ],
+      "project_structure": [
+        "src/",
+        "tests/",
+        "examples/",
+        "benches/",
+        "docs/"
+      ],
+      "build_files": ["Cargo.toml", "Cargo.lock", "build.rs"],
+      "test_patterns": ["tests/", "#[test]", "#[cfg(test)]"],
+      "capabilities": {
+        "systems_programming": 5,
+        "performance": 5,
+        "memory_safety": 5,
+        "concurrency": 5,
+        "web_backend": 4,
+        "cli_tools": 5
+      }
+    },
+    "javascript": {
+      "architect": "jsad",
+      "developer": "jsdev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".js", ".mjs", ".cjs"],
+      "config_files": [
+        "package.json",
+        "yarn.lock",
+        "package-lock.json",
+        "webpack.config.js",
+        "babel.config.js",
+        ".eslintrc.js"
+      ],
+      "patterns": [
+        "function ",
+        "const ",
+        "let ",
+        "var ",
+        "=>",
+        "async ",
+        "await ",
+        "require(",
+        "import ",
+        "export "
+      ],
+      "project_structure": [
+        "src/",
+        "lib/",
+        "test/",
+        "dist/",
+        "public/",
+        "docs/"
+      ],
+      "build_files": [
+        "package.json",
+        "webpack.config.js",
+        "rollup.config.js",
+        "gulpfile.js"
+      ],
+      "test_patterns": ["*.test.js", "*.spec.js", "test/", "__tests__/"],
+      "capabilities": {
+        "web_frontend": 5,
+        "web_backend": 4,
+        "mobile_apps": 3,
+        "desktop_apps": 3,
+        "apis": 4,
+        "real_time": 4
+      }
+    },
+    "typescript": {
+      "architect": "tsad",
+      "developer": "tsdev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".ts", ".tsx", ".d.ts"],
+      "config_files": [
+        "tsconfig.json",
+        "package.json",
+        "tslint.json",
+        "jest.config.ts"
+      ],
+      "patterns": [
+        "interface ",
+        "type ",
+        ": string",
+        ": number",
+        ": boolean",
+        "export ",
+        "import ",
+        "class ",
+        "enum ",
+        "namespace "
+      ],
+      "project_structure": [
+        "src/",
+        "lib/",
+        "test/",
+        "dist/",
+        "types/",
+        "docs/"
+      ],
+      "build_files": [
+        "tsconfig.json",
+        "package.json",
+        "webpack.config.ts",
+        "rollup.config.ts"
+      ],
+      "test_patterns": ["*.test.ts", "*.spec.ts", "test/", "__tests__/"],
+      "capabilities": {
+        "web_frontend": 5,
+        "web_backend": 4,
+        "type_safety": 5,
+        "large_applications": 5,
+        "apis": 5,
+        "tooling": 4
+      }
+    },
+    "java": {
+      "architect": "javaarch",
+      "developer": "javadev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".java"],
+      "config_files": [
+        "pom.xml",
+        "build.gradle",
+        "gradle.properties",
+        "settings.gradle"
+      ],
+      "patterns": [
+        "public class",
+        "public static void main",
+        "import ",
+        "package ",
+        "@Override",
+        "@Component",
+        "@Service",
+        "@Repository"
+      ],
+      "project_structure": [
+        "src/main/java/",
+        "src/test/java/",
+        "src/main/resources/",
+        "target/",
+        "docs/"
+      ],
+      "build_files": ["pom.xml", "build.gradle", "build.xml"],
+      "test_patterns": ["*Test.java", "*Tests.java", "src/test/"],
+      "capabilities": {
+        "enterprise": 5,
+        "web_backend": 5,
+        "microservices": 5,
+        "desktop_apps": 4,
+        "mobile_apps": 4,
+        "big_data": 4
+      }
+    },
+    "csharp": {
+      "architect": "csarch",
+      "developer": "csdev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".cs", ".csx"],
+      "config_files": [
+        "*.csproj",
+        "*.sln",
+        "packages.config",
+        "global.json",
+        "nuget.config"
+      ],
+      "patterns": [
+        "using ",
+        "namespace ",
+        "public class",
+        "static void Main",
+        "public static",
+        "async Task",
+        "await "
+      ],
+      "project_structure": [
+        "src/",
+        "test/",
+        "docs/",
+        "tools/",
+        "packages/"
+      ],
+      "build_files": ["*.csproj", "*.sln", "Directory.Build.props"],
+      "test_patterns": ["*Test.cs", "*Tests.cs", "test/"],
+      "capabilities": {
+        "enterprise": 5,
+        "web_backend": 5,
+        "desktop_apps": 5,
+        "mobile_apps": 4,
+        "games": 4,
+        "cloud": 5
+      }
+    },
+    "cpp": {
+      "architect": "cpparch",
+      "developer": "cppdev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".cpp", ".cxx", ".cc", ".c++", ".h", ".hpp", ".hxx"],
+      "config_files": [
+        "CMakeLists.txt",
+        "Makefile",
+        "conanfile.txt",
+        "vcpkg.json"
+      ],
+      "patterns": [
+        "#include",
+        "int main(",
+        "class ",
+        "struct ",
+        "namespace ",
+        "template<",
+        "std::"
+      ],
+      "project_structure": [
+        "src/",
+        "include/",
+        "test/",
+        "build/",
+        "docs/",
+        "external/"
+      ],
+      "build_files": ["CMakeLists.txt", "Makefile", "meson.build"],
+      "test_patterns": ["*_test.cpp", "test_*.cpp", "tests/"],
+      "capabilities": {
+        "systems_programming": 5,
+        "performance": 5,
+        "games": 5,
+        "embedded": 5,
+        "desktop_apps": 4,
+        "scientific": 4
+      }
+    },
+    "ruby": {
+      "architect": "rubyarch",
+      "developer": "rubydev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".rb", ".rake"],
+      "config_files": [
+        "Gemfile",
+        "Gemfile.lock",
+        "Rakefile",
+        "config.ru"
+      ],
+      "patterns": [
+        "def ",
+        "class ",
+        "module ",
+        "require ",
+        "include ",
+        "attr_accessor",
+        "puts "
+      ],
+      "project_structure": [
+        "app/",
+        "lib/",
+        "test/",
+        "spec/",
+        "config/",
+        "db/"
+      ],
+      "build_files": ["Gemfile", "Rakefile", ".gemspec"],
+      "test_patterns": ["*_test.rb", "*_spec.rb", "test/", "spec/"],
+      "capabilities": {
+        "web_backend": 5,
+        "scripting": 5,
+        "automation": 5,
+        "prototyping": 5,
+        "apis": 4,
+        "devops": 4
+      }
+    },
+    "php": {
+      "architect": "phparch",
+      "developer": "phpdev",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".php", ".phtml"],
+      "config_files": [
+        "composer.json",
+        "composer.lock",
+        "phpunit.xml",
+        ".htaccess"
+      ],
+      "patterns": [
+        "<?php",
+        "function ",
+        "class ",
+        "namespace ",
+        "use ",
+        "$",
+        "public function",
+        "private function"
+      ],
+      "project_structure": [
+        "src/",
+        "tests/",
+        "public/",
+        "vendor/",
+        "config/"
+      ],
+      "build_files": ["composer.json", "phpunit.xml", "webpack.mix.js"],
+      "test_patterns": ["*Test.php", "tests/"],
+      "capabilities": {
+        "web_backend": 5,
+        "cms": 5,
+        "e_commerce": 5,
+        "apis": 4,
+        "scripting": 4,
+        "legacy_systems": 5
+      }
+    }
+  },
+  "agent_discovery": {
+    "scan_paths": [
+      "/home/aural/.claude/agents",
+      ".claude/agents"
+    ],
+    "auto_detect_capabilities": true,
+    "capability_keywords": {
+      "architecture": ["architect", "design", "architecture", "system design"],
+      "implementation": ["implement", "development", "coding", "programming"],
+      "testing": ["test", "testing", "qa", "quality"],
+      "documentation": ["doc", "documentation", "readme", "guide"],
+      "performance": ["performance", "optimization", "speed", "efficiency"],
+      "security": ["security", "auth", "encryption", "secure"]
+    },
+    "language_affinity_patterns": {
+      "go": ["golang", "go lang", "go programming", "gopher"],
+      "python": ["python", "py", "django", "flask", "fastapi"],
+      "rust": ["rust", "cargo", "rustacean", "memory safe"],
+      "javascript": ["javascript", "js", "node", "npm", "react"],
+      "typescript": ["typescript", "ts", "angular", "type safe"]
+    }
+  },
+  "performance_tracking": {
+    "track_agent_performance": true,
+    "metrics_to_track": [
+      "response_time",
+      "success_rate",
+      "output_quality",
+      "user_satisfaction"
+    ],
+    "performance_history_limit": 1000,
+    "enable_agent_ranking": true,
+    "ranking_factors": {
+      "success_rate": 0.4,
+      "response_time": 0.2,
+      "output_quality": 0.3,
+      "recent_performance": 0.1
+    }
+  },
+  "quality_standards": {
+    "minimum_design_score": 0.6,
+    "minimum_feat_score": 0.7,
+    "minimum_code_score": 0.5,
+    "require_tests": true,
+    "require_documentation": true,
+    "enforce_style_guidelines": true,
+    "max_complexity_score": 10.0
+  },
+  "fallback_configuration": {
+    "default_architect": "meta-agent",
+    "default_developer": "meta-agent",
+    "enable_generic_agents": true,
+    "generic_agent_timeout": 600,
+    "fallback_quality_adjustment": -0.2
+  }
+}

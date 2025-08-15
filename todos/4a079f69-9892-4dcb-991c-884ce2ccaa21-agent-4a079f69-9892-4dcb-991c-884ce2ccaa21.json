@@ -1,22 +1,17 @@
 [
   {
-    "content": "Add WebSearch tool to pydv agent",
-    "status": "completed",
+    "content": "Analyze current project structure and propose file organization",
+    "status": "pending",
     "id": "1"
   },
   {
-    "content": "Add WebSearch tool to pyad agent",
-    "status": "completed",
+    "content": "Define Python orchestration vs Agent file handling responsibilities",
+    "status": "pending",
     "id": "2"
   },
   {
-    "content": "Add WebSearch tool to gad agent",
-    "status": "completed",
+    "content": "Update appendix.md with file structure and responsibilities",
+    "status": "pending",
     "id": "3"
-  },
-  {
-    "content": "Add WebSearch tool to god agent",
-    "status": "completed",
-    "id": "4"
   }
 ]

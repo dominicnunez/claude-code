@@ -1,1 +1,19 @@
-so for design.py i want to use it like so: "/design pomodoro timer" > 5 gad agents create their pomodoro timer, 1 gad picks the best of the 5 and puts it in a appendix.md file the locaton of which can be found in (back or front)/.docs/plan directory. I wonder if this procress could be language agnostic some how as well; for example if i had a python archictect/designer would be able to use the same "/design pomodoro timer" so maybe i need to specific the specific language architect like "/design go pomodoro timer" or "/design gad pomodoro timer"?
+// /hooks/multi_agent/config/language_agents.json
+{
+  "languages": {
+    "go": {
+      "architect": "gad",
+      "developer": "god",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".go"],
+      "config_files": ["go.mod", "go.sum"]
+    },
+    "python": {
+      "architect": "pyad",
+      "developer": "pydv",
+      "confidence_threshold": 0.8,
+      "file_extensions": [".py"],
+      "config_files": ["pyproject.toml", "requirements.txt"]
+    }
+  }
+}
