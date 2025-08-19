@@ -24,7 +24,7 @@ This repository serves as the **main Claude Code configuration repository** - a 
 
 ## Core Features
 
-### 🤖 Sub-Agent System
+### 🤖 Sub-Agents
 
 Specialized AI agents that handle specific tasks with custom system prompts and tools.
 
@@ -40,8 +40,6 @@ Specialized AI agents that handle specific tasks with custom system prompts and 
 | **nixa**                           | NixOS configuration specialist            | Default |
 | **rick-sanchez-coder**             | Cynical but effective coding assistant    | Default |
 | **horror-writer**                  | Creative writing specialist               | Default |
-| **llm-ai-agents-and-eng-research** | AI research and news aggregator           | Default |
-| **work-completion-summary**        | Audio summary generator with TTS          | Default |
 | **pyad**                           | Python architecture design                | Default |
 | **pydv**                           | Python development specialist             | Default |
 
@@ -111,21 +109,13 @@ if dangerous_pattern_detected(data):
 sys.exit(0)
 ```
 
-### 🔄 Multi-Agent Orchestration
-
-Complex workflows that coordinate multiple agents:
-
-```python
-# Example: Feature development workflow
-1. Design agent creates architecture
-2. Implementation agent writes code
-3. Testing agent validates functionality
-4. Documentation agent updates docs
-```
-
 ## Token Tracking
 
 The repository includes a token tracking system that monitors Claude Code usage:
+
+**Note: stats are only updated when a claude session is closed**
+
+![Token Tracking Dashboard](assets/token-stats.png)
 
 - **Automatic tracking** via `token_tracker.py` hook
 - **Usage reports** stored in `token_usage.json`
@@ -138,12 +128,14 @@ View usage:
 uv run ~/.claude/token_usage_report.py
 ```
 
+**Note: stats are only updated when a claude session is closed**
+
 ## Resources
 
 - [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
 - [Claude Code Sub-Agents](https://docs.anthropic.com/en/docs/claude-code/sub-agents)
 - [Claude Code Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
-- [Issue Tracker](https://github.com/anthropics/claude-code/issues)
+- [Claude Code Issue Tracker](https://github.com/anthropics/claude-code/issues)
 
 ## License
 
