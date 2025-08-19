@@ -11,6 +11,7 @@ import json
 import os
 import sys
 import subprocess
+import re
 from pathlib import Path
 from datetime import datetime
 
@@ -48,6 +49,128 @@ def get_tts_script_path():
         return str(pyttsx3_script)
     
     return None
+
+
+def extract_token_usage(output_text):
+    """Extract token usage from subagent output text."""
+    usage = {}
+    
+    # Common patterns for token reporting
+    patterns = [
+        # Pattern: "57k tokens" or "57,000 tokens"
+        r'([\d,]+)k?\s*tokens?',
+        # Pattern: "input_tokens: 30000, output_tokens: 27000"
+        r'input_tokens[:\s]+([\d,]+)',
+        r'output_tokens[:\s]+([\d,]+)',
+        # Pattern: "Total tokens: 57000" or "Total: 57,000 tokens"
+        r'[Tt]otal(?:\s+tokens)?[:\s]+([\d,]+)',
+        # Pattern: "Used 57000 tokens"
+        r'[Uu]sed\s+([\d,]+)\s*tokens?',
+    ]
+    
+    # Try to find total tokens first - look for various patterns
+    patterns = [
+        r'[Tt]otal.*?[:\s]+?([\d,]+)(k)?\s*tokens?',  # "Total token usage: 42,500"
+        r'[Tt]oken\s+(?:count|usage)[:\s]+?([\d,]+)(k)?',  # "Token count: 15000"
+        r'[Uu]sed\s+([\d,]+)(k)?\s*tokens?',  # "Used 57k tokens"
+        r'consumed\s+([\d,]+)(k)?\s*tokens?',  # "consumed 8k tokens"
+        r'([\d,]+)(k)?\s*tokens?',  # Generic "57k tokens"
+    ]
+    
+    total_match = None
+    for pattern in patterns:
+        total_match = re.search(pattern, output_text, re.IGNORECASE)
+        if total_match:
+            break
+    
+    if total_match:
+        total_str = total_match.group(1).replace(',', '')
+        if total_match.group(2) and total_match.group(2).lower() == 'k':
+            total_tokens = int(float(total_str) * 1000)
+        else:
+            total_tokens = int(total_str)
+        
+        # If we only have total, split it roughly 55/45 for input/output
+        usage['input_tokens'] = int(total_tokens * 0.55)
+        usage['output_tokens'] = total_tokens - usage['input_tokens']
+        usage['total_tokens'] = total_tokens
+    
+    # Try to find specific input/output tokens
+    input_match = re.search(r'input_tokens[:\s]+([\d,]+)', output_text, re.IGNORECASE)
+    output_match = re.search(r'output_tokens[:\s]+([\d,]+)', output_text, re.IGNORECASE)
+    
+    if input_match:
+        usage['input_tokens'] = int(input_match.group(1).replace(',', ''))
+    if output_match:
+        usage['output_tokens'] = int(output_match.group(1).replace(',', ''))
+    
+    # Calculate total if we have input and output
+    if 'input_tokens' in usage and 'output_tokens' in usage and 'total_tokens' not in usage:
+        usage['total_tokens'] = usage['input_tokens'] + usage['output_tokens']
+    
+    # Add default cache values
+    if usage:
+        usage['cache_read_tokens'] = 0
+        usage['cache_creation_tokens'] = 0
+    
+    return usage if usage else None
+
+
+def track_subagent_tokens(input_data):
+    """Track token usage from subagent execution."""
+    try:
+        # Look for token usage in various places
+        usage = None
+        
+        # Check if usage is directly provided
+        if 'usage' in input_data:
+            usage = input_data['usage']
+        
+        # Try to extract from agent output if available
+        if not usage and 'agent_output' in input_data:
+            usage = extract_token_usage(input_data['agent_output'])
+        
+        # Try to extract from result if available
+        if not usage and 'result' in input_data:
+            result_text = str(input_data.get('result', ''))
+            usage = extract_token_usage(result_text)
+        
+        # Try to extract from any text field
+        if not usage:
+            for key in ['output', 'response', 'message', 'content']:
+                if key in input_data:
+                    text = str(input_data.get(key, ''))
+                    usage = extract_token_usage(text)
+                    if usage:
+                        break
+        
+        if usage:
+            # Call token_tracker.py with the usage data
+            token_tracker = Path(__file__).parent / "token_tracker.py"
+            if token_tracker.exists():
+                tracking_event = {
+                    "session_id": input_data.get("session_id", "subagent"),
+                    "event_type": "subagent_stop",
+                    "usage": usage,
+                    "model": input_data.get("model", input_data.get("agent_type", "unknown")),
+                    "timestamp": datetime.now().isoformat(),
+                    "agent_type": input_data.get("agent_type", "unknown")
+                }
+                
+                subprocess.run(
+                    ["python3", str(token_tracker)],
+                    input=json.dumps(tracking_event),
+                    capture_output=True,
+                    text=True,
+                    timeout=5,
+                    env={**os.environ, "CLAUDE_CODE_HOOK_EVENT": "subagent_stop"}
+                )
+                
+                # Log that we tracked tokens
+                print(f"Tracked {usage.get('total_tokens', 0)} tokens for subagent", file=sys.stderr)
+    except Exception as e:
+        # Fail silently but log to stderr for debugging
+        print(f"Token tracking error: {e}", file=sys.stderr)
 
 
 def announce_subagent_completion():
@@ -135,6 +258,9 @@ def main():
                 except Exception:
                     pass  # Fail silently
 
+        # Track token usage if available
+        track_subagent_tokens(input_data)
+        
         # Announce subagent completion via TTS
         announce_subagent_completion()
 

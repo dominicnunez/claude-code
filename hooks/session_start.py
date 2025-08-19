@@ -44,6 +44,28 @@ def log_session_start(input_data):
     # Write back to file with formatting
     with open(log_file, 'w') as f:
         json.dump(log_data, f, indent=2)
+    
+    # Initialize token tracking for this session
+    try:
+        token_tracker = Path(__file__).parent / "token_tracker.py"
+        if token_tracker.exists():
+            # Create a session start event for token tracking
+            tracking_event = {
+                "session_id": input_data.get('session_id', 'unknown'),
+                "event_type": "session_start",
+                "timestamp": datetime.now().isoformat(),
+                "source": input_data.get('source', 'unknown')
+            }
+            subprocess.run(
+                ["uv", "run", str(token_tracker)],
+                input=json.dumps(tracking_event),
+                capture_output=True,
+                text=True,
+                timeout=5,
+                env={**os.environ, "CLAUDE_CODE_HOOK_EVENT": "session_start"}
+            )
+    except Exception:
+        pass  # Fail silently
 
 
 def get_git_status():

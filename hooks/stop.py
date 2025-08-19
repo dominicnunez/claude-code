@@ -14,6 +14,7 @@ import random
 import subprocess
 from pathlib import Path
 from datetime import datetime
+from typing import Dict, Any, Optional
 
 try:
     from dotenv import load_dotenv
@@ -112,6 +113,110 @@ def get_llm_completion_message():
     messages = get_completion_messages()
     return random.choice(messages)
 
+def get_session_token_usage(session_id: str) -> Optional[Dict[str, Any]]:
+    """Get token usage statistics for a specific session."""
+    try:
+        token_file = Path.home() / ".claude" / "token_usage.json"
+        if not token_file.exists():
+            return None
+        
+        with open(token_file, 'r') as f:
+            data = json.load(f)
+        
+        # Find all events for this session
+        session_events = [s for s in data.get("sessions", []) 
+                         if s.get("session_id") == session_id]
+        
+        if not session_events:
+            return None
+        
+        # Aggregate token usage
+        total_input = 0
+        total_output = 0
+        total_cache_read = 0
+        total_cache_creation = 0
+        models_used = set()
+        
+        for event in session_events:
+            usage = event.get("usage", {})
+            total_input += usage.get("input_tokens", 0)
+            total_output += usage.get("output_tokens", 0)
+            total_cache_read += usage.get("cache_read_tokens", 0)
+            total_cache_creation += usage.get("cache_creation_tokens", 0)
+            
+            model = event.get("model")
+            if model and model != "unknown":
+                models_used.add(model)
+        
+        total_tokens = total_input + total_output + total_cache_read + total_cache_creation
+        
+        return {
+            "input_tokens": total_input,
+            "output_tokens": total_output,
+            "cache_read_tokens": total_cache_read,
+            "cache_creation_tokens": total_cache_creation,
+            "total_tokens": total_tokens,
+            "models": list(models_used)
+        }
+    except Exception:
+        return None
+
+def calculate_session_cost(usage: Dict[str, Any], models: list) -> float:
+    """Calculate estimated cost for session usage."""
+    # Use the most expensive model for conservative estimate
+    model_pricing = {
+        "opus": {"input": 15.00, "output": 75.00, "cache_read": 1.50, "cache_creation": 18.75},
+        "sonnet": {"input": 3.00, "output": 15.00, "cache_read": 0.30, "cache_creation": 3.75},
+        "haiku": {"input": 0.80, "output": 4.00, "cache_read": 0.08, "cache_creation": 1.00},
+    }
+    
+    # Determine pricing tier based on models used
+    pricing = model_pricing["sonnet"]  # Default
+    for model in models:
+        model_lower = model.lower() if model else ""
+        if "opus" in model_lower:
+            pricing = model_pricing["opus"]
+            break  # Opus is most expensive, use it
+        elif "haiku" in model_lower and pricing == model_pricing["sonnet"]:
+            pricing = model_pricing["haiku"]
+    
+    cost = 0
+    cost += (usage.get("input_tokens", 0) / 1_000_000) * pricing["input"]
+    cost += (usage.get("output_tokens", 0) / 1_000_000) * pricing["output"]
+    cost += (usage.get("cache_read_tokens", 0) / 1_000_000) * pricing["cache_read"]
+    cost += (usage.get("cache_creation_tokens", 0) / 1_000_000) * pricing["cache_creation"]
+    
+    return cost
+
+def display_session_summary(session_id: str) -> str:
+    """Generate a session summary with token usage and cost."""
+    usage = get_session_token_usage(session_id)
+    
+    if not usage or usage["total_tokens"] == 0:
+        return ""
+    
+    cost = calculate_session_cost(usage, usage.get("models", []))
+    
+    # Format the summary
+    summary_lines = [
+        "\n" + "="*50,
+        "SESSION TOKEN USAGE SUMMARY",
+        "="*50,
+        f"Input tokens:    {usage['input_tokens']:,}",
+        f"Output tokens:   {usage['output_tokens']:,}",
+        f"Cache tokens:    {usage['cache_read_tokens'] + usage['cache_creation_tokens']:,}",
+        "-"*50,
+        f"Total tokens:    {usage['total_tokens']:,}",
+        f"Estimated cost:  ${cost:.4f}",
+    ]
+    
+    if usage.get("models"):
+        summary_lines.append(f"Models used:     {', '.join(usage['models'][:2])}")
+    
+    summary_lines.append("="*50)
+    
+    return "\n".join(summary_lines)
+
 def announce_completion():
     """Announce completion using the best available TTS service."""
     try:
@@ -174,6 +279,21 @@ def main():
         with open(log_path, 'w') as f:
             json.dump(log_data, f, indent=2)
         
+        # Track token usage for this session
+        try:
+            token_tracker = Path(__file__).parent / "token_tracker.py"
+            if token_tracker.exists():
+                subprocess.run(
+                    ["uv", "run", str(token_tracker)],
+                    input=json.dumps(input_data),
+                    capture_output=True,
+                    text=True,
+                    timeout=5,
+                    env={**os.environ, "CLAUDE_CODE_HOOK_EVENT": "stop"}
+                )
+        except Exception:
+            pass  # Fail silently
+        
         # Handle --chat switch
         if args.chat and 'transcript_path' in input_data:
             transcript_path = input_data['transcript_path']
@@ -197,6 +317,16 @@ def main():
                 except Exception:
                     pass  # Fail silently
 
+        # Display session token usage summary (unless disabled)
+        show_summary = os.environ.get('CLAUDE_SHOW_TOKEN_SUMMARY', 'true').lower() != 'false'
+        if show_summary:
+            try:
+                summary = display_session_summary(session_id)
+                if summary:
+                    print(summary, file=sys.stderr)  # Print to stderr so it's visible
+            except Exception:
+                pass  # Fail silently if display fails
+        
         # Announce completion via TTS
         announce_completion()
 

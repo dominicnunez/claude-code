@@ -4,7 +4,8 @@
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:nixos.org)",
       "WebFetch(domain:nixos.wiki)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(/home/aural/.claude/token_usage_report.py)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

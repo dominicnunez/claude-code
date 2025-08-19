@@ -31,12 +31,36 @@
         ]
       }
     ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/aural/.claude/hooks/post_tool_use.py"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
           {
             "type": "command",
+            "command": "/home/aural/.claude/hooks/stop.py"
+          },
+          {
+            "type": "command",
             "command": "paplay /run/current-system/sw/share/sounds/freedesktop/stereo/bell.oga"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/aural/.claude/hooks/subagent_stop.py"
           }
         ]
       }
